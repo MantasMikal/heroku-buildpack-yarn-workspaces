@@ -21,13 +21,13 @@ APP_BASE="$(cat "${ENV_DIR}/APP_BASE")"
 
 (   
     echo "Stage:"
-    echo $(ls ${APP_BASE})
+    echo $(ls ${STAGE})
     mv "${BUILD_DIR}/${APP_BASE}" "${STAGE}" &&
     cp "${BUILD_DIR}/yarn.lock" "${STAGE}/$(basename "$APP_BASE")" &&
     cp "${BUILD_DIR}/.yarnrc.yml" "${STAGE}/$(basename "$APP_BASE")" &&
     cp -r "${BUILD_DIR}/.yarn" "${STAGE}/$(basename "$APP_BASE")"
     echo "Stage after:"
-    echo $(ls ${APP_BASE})
+    echo $(ls ${STAGE})
 )
 
 echo "Copied yarn.lock, .yarnrc.yml and yarn/* to ${APP_BASE} directory." | indent
@@ -35,6 +35,8 @@ echo "Copied yarn.lock, .yarnrc.yml and yarn/* to ${APP_BASE} directory." | inde
 (
     rm -rf "${BUILD_DIR:?}"/* &&
     mv "${STAGE}/$(basename "$APP_BASE")"/* "${BUILD_DIR}"
+    echo "Final"
+    echo $(ls ${BUILD_DIR})
 )
 
 if [ $? -ne 0 ]; then
