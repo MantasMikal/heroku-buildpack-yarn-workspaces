@@ -3,7 +3,7 @@
 This buildpack is for monorepos configured with yarn workspaces. This is an appropriation of the [heroku-monorepo-buildpack](https://github.com/lstoll/heroku-buildpack-monorepo).
 
 ## Rationale
-It deals with the issue of not having [required yarn v3 directiories](https://next.yarnpkg.com/getting-started/qa#which-files-should-be-gitignored). It will copy .yarnrc.yml, yarn.lock and yarn/*
+It deals with the issue of not having [required yarn v3 directiories](https://next.yarnpkg.com/getting-started/qa#which-files-should-be-gitignored). It will copy `.yarnrc.yml`, `yarn.lock` and `yarn/*` directories.
 
 ## Usage
 
