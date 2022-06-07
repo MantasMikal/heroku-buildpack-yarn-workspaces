@@ -11,4 +11,4 @@ It deals with the issue of not having [required yarn v3 directiories](https://ne
 
 2. Ensure you have a `yarn.lock` on your project's root directory. This buildpack will copy the `yarn.lock` to the `APP_BASE` directory. This is helpful for Heroku to detect and automatically install `yarn` in our behalf.
 
-3. Add this buildpack to your app using the command: `heroku buildpacks:add -a <app> [https://github.com/jg-rivera/heroku-buildpack-yarn-workspaces](https://github.com/MantasMikal/heroku-buildpack-yarn-workspaces)`
+3. Add this buildpack to your app using the command: `heroku buildpacks:add -a <app> [https://github.com/MantasMikal/heroku-buildpack-yarn-workspaces](https://github.com/MantasMikal/heroku-buildpack-yarn-workspaces)`
